@@ -1,0 +1,382 @@
+<html>
+    <head>
+        <title>Tablas html</title>
+        <link rel="stylesheet" href="../css/Styles.css" type="text/css" >
+        <style type="text/css">
+            #tabla_uno{
+                width: 100%;
+                text-align: center;
+                margin: 0 auto;
+                color: #4A607A;
+                border-style: solid;
+                border-color: #76B1AC;
+                border-width: 5px;
+                border-spacing: 10px;
+            }
+           #tabla_uno th{
+                background-color:  #E5CEF0;
+            }
+            #tabla_uno td{
+                background-color: #E5CEF0;
+                color:#4A607A;
+                text-align: left;
+                border-style: solid;
+                border-color: #76B1AC;
+                border-top-width: 3px;
+                border-radius: 5px;
+                margin: 10px;
+            }
+            /*#tabla2{
+                color: mediumorchid;
+            }
+            #tabla2 td{
+                color: mediumpurple;
+                height: 40px;
+                padding: 5px;
+            }*/
+            .celda_centrada{
+                text-align: center;
+                padding: 0px;
+                background-color: #E5CEF0;
+            }
+            .tabla_dos{
+                width: 700px;
+                border-collapse: collapse;
+                border-color: #4A607A;
+                color: #D6F2E5;
+                border-style: solid;
+                margin: 0 auto;
+            }
+            .tabla_dos td, .tabla dos th{
+                width: 150px;
+                border-color:beige;
+                padding: 10px;
+                border-style: dashed;
+            }
+            .tabla_dos th{
+                background-color:#4A607A;
+            }
+            .tabla_dos td{
+                background-color: #76B1AC;
+            }
+            #tablazebra{
+                width: 100%;
+                color: #4A607A;
+            }
+            #tablazebra tbody tr:nth-child(even){
+                background-color: #E5CEF0;
+            }
+            #tablazebra tbody tr:nth-child(odd){
+                background-color: #B4C1F3;
+            }
+            #tablazebra thead tr{
+                background-color: #76B1AC;
+            }
+            .tablahover{
+                width: 80%;
+                margin: 0 auto;
+                color: #4A607A;
+            }
+            .tablahover tr th{
+                background-color: #76B1AC;
+                padding: 20px;
+                border: 5px;
+            }
+            .tablahover tr{
+                background-color: #B4C1F3;
+                padding: 10px;
+                border: 5px;
+            }
+            .tablahover tr:hover{
+                color: blue;
+                background-color: #D6F2E5;
+                
+            }
+            .centrar{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Amistades</h1>
+        </header>
+        <nav>
+            <ul>
+                <li> <a href="../Mi%20index.html">Inicio</a></li>
+            <li><a href="../html/Gustos.html">Listas</a> </li>
+            <li><a href="../html/Deporte%20favorito.html">Imagenes</a> </li>
+            <li><a href="../html/Enlaces.html">Enlaces</a> </li>
+            <li><a href="../html/Cancionesfavoritas.html">Audio</a> </li>
+            <li><a href="../html/Videofav.html">Video</a></li>
+            <li><a href="../html/Investigando.html">Formularios</a></li>
+            <li><a href="../html/Amistades.html">Tablas</a></li>
+            </ul>
+        </nav>
+        <main> 
+            <section style="overflow-x: auto">
+                <h2>Amistades virtuales</h2>
+                <p>Las amistades virtuales pueden ofrecer conexiones significativas y un sentido de comunidad. Estas relaciones permiten compartir intereses y experiencias, aunque a menudo carecen de la intimidad que puede lograrse en encuentros cara a cara. A medida que las personas profundizan en estas interacciones, a veces surgen desafíos como malentendidos o la idealización de los demás. Sin embargo, en última instancia, pueden enriquecer nuestras vidas y ofrecer apoyo emocional.</p>
+                
+                <table border="1" id="tabla_uno">
+                    <thead>
+                        <tr>
+                            <th>País</th>
+                            <th>Nombres</th>
+                            <th>Apellido Paterno</th>
+                            <th>Apellido materno</th>
+                            <th>Carrera</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Perú</td>
+                            <td>Jade</td>
+                            <td>Díaz</td>
+                            <td>Mendez</td>
+                            <td>Derecho</td>
+                        </tr>
+                        <tr>
+                            <td>México</td>
+                            <td>Kenia</td>
+                            <td>Quiroz</td>
+                            <td>Flores</td>
+                            <td>Preparatoria</td>
+                        </tr>
+                        <tr>
+                            <td>México</td>
+                            <td>Alejandra</td>
+                            <td>Flores</td>
+                            <td>Torres</td>
+                            <td>Derecho</td>
+                        </tr>
+                        <tr>
+                            <td>Salvador</td>
+                            <td>Alejandra</td>
+                            <td>Martinez</td>
+                            <td>Garcia</td>
+                            <td>Azafata</td>
+                        </tr>
+                        <tr>
+                            <td>Chile</td>
+                            <td>Angela</td>
+                            <td>Flores</td>
+                            <td>Ríos</td>
+                            <td>Ingeniería</td>
+                        </tr>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+
+            </section>
+            <section style="overflow-x: auto">
+                <h2>Amistades físicos</h2>
+                <p>Las amistades físicas son fundamentales para el bienestar emocional y social. Estas conexiones permiten la interacción cara a cara, lo que fomenta la intimidad y la confianza. Compartir experiencias en persona, desde actividades cotidianas hasta momentos significativos, fortalece los lazos y crea recuerdos duraderos.
+
+Además, las amistades físicas ofrecen apoyo en momentos difíciles, ayudando a reducir el estrés y la soledad. La comunicación no verbal, como el contacto visual y el lenguaje corporal, enriquece las interacciones y permite una comprensión más profunda. Es decir, estas relaciones son esenciales para el desarrollo personal y la construcción de una red de apoyo sólida</p>
+                <table id="tabla2" class="tabla_dos">
+                    <thead>
+                        <tr>
+                            <th style="width: 200px;">Nombre</th>
+                            <th style="width: 150px;">Edad</th>
+                            <th style="width: 200px;" colspan="2">Deporte favorito</th>
+                            <th style="width: 150px;">Tiempo de práctica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jhonatan Sanchez</td>
+                            <td style="text-align:center;padding:0px" >22</td>
+                            <td>Beibol</td>
+                            <td>Fútbol</td>
+                            <td class="celda_centrada" style="text-align: center;
+                padding: 0px;
+                background-color: mediumpurple;">4 años</td>
+                        </tr>
+                        <tr>
+                            <td>Denis Mendez</td>
+                            <td style="text-align:center;padding:0px" >23</td>
+                            <td>Baile</td>
+                            <td>Voleibol</td>
+                            <td class="celda_centrada" style="text-align: center;
+                padding: 0px;
+                background-color: mediumpurple;">2 años</td>
+                        </tr>
+                        <tr>
+                            <td>Orlando Lara</td>
+                            <td style="text-align:center;padding:0px" >23</td>
+                            <td>Beisbol</td>
+                            <td>Baloncesto</td>
+                            <td class="celda_centrada" style="text-align: center;
+                padding: 0px;
+                background-color: mediumpurple;">6 años</td>
+                        </tr>
+                        <tr>
+                            <td>Enrique Reyes</td>
+                            <td style="text-align:center;padding:0px" >22</td>
+                            <td>Futbol</td>
+                            <td>Voleibol</td>
+                            <td class="celda_centrada" style="text-align: center;
+                padding: 0px;
+                background-color: mediumpurple;">1 año</td>
+                        </tr>
+                        <tr>
+                            <td>Daniela Mejia</td>
+                            <td style="text-align:center;padding:0px" >22</td>
+                            <td>Baile</td>
+                            <td>Tenis</td>
+                            <td class="celda_centrada" style="text-align: center;
+                padding: 0px;
+                background-color: mediumpurple;">2 años</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Total</td>
+                            <td class="celda_centrada" style="background-color: lightskyblue; color:aliceblue" >15</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+            <section style="overflow-x: auto">
+                <h2>Actividades con amigos</h2>
+                <p>La interacción con amigos fomenta el desarrollo de habilidades sociales, como la comunicación efectiva, la empatía y la resolución de conflictos. Estas habilidades son esenciales en todos los ámbitos de la vida, desde las relaciones personales hasta el entorno laboral. Practicar estas habilidades en un entorno amistoso proporciona confianza y facilidad.</p>
+                <p>Cuando compartes momentos significativos, como una celebración o un desafío, se fomenta un sentido de pertenencia y seguridad emocional. Hablar sobre problemas o inquietudes en un ambiente amigable puede aliviar la carga emocional y proporcionar diferentes perspectivas que ayudan a resolver conflictos.</p>
+                <table id="tablazebra">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Lugar</th>
+                            <th>Actividad</th>
+                            <th>Veces al año</th>
+                            <th>tiempo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Denis Mendez</td>
+                            <td>Los Fuertes</td>
+                            <td>Andar en bicicleta</td>
+                            <td>3 veces</td>
+                            <td>2 horas</td>
+                        </tr>
+                        <tr>
+                            <td>Giovanna</td>
+                            <td>Plaza comercial</td>
+                            <td>Salir a comer</td>
+                            <td>2 veces</td>
+                            <td>2 horas</td>
+                        </tr>
+                        <tr>
+                            <td>Mariana Rojas</td>
+                            <td>Parque</td>
+                            <td>Caminar</td>
+                            <td>1 vez</td>
+                            <td>3 horas</td>
+                        </tr>
+                        <tr>
+                            <td>Monserrat López</td>
+                            <td>Plaza comercial</td>
+                            <td>Ir a cine</td>
+                            <td>2 veces</td>
+                            <td>2-3 horas</td>
+                        </tr>
+                        <tr>
+                            <td>Abigail Díaz</td>
+                            <td>Museo</td>
+                            <td>Arte</td>
+                            <td>2 veces</td>
+                            <td>3 horas</td>
+                        </tr>
+                        <tr>
+                            <td>Sebastián Reyes</td>
+                            <td>Parque</td>
+                            <td>Caminar</td>
+                            <td>1 vez</td>
+                            <td>3 horas</td>
+                        </tr>
+                        <tr>
+                            <td>Nancy Morales</td>
+                            <td>Casa</td>
+                            <td>Ver películas</td>
+                            <td>1 vez</td>
+                            <td>6 horas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section style="overflow-x: auto">
+                <h2>Amistades más cercanas</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu sapien mollis, aliquam sapien in, rhoncus magna. Suspendisse hendrerit laoreet bibendum. Morbi vel tincidunt ipsum, in faucibus erat. Sed et urna sagittis, aliquet ligula id, suscipit metus. Morbi elit ipsum, sodales varius feugiat non, pellentesque eget lacus. Etiam sit amet purus hendrerit, viverra dolor in, laoreet est. Vivamus consectetur nulla a feugiat placerat. Vivamus in metus non neque fringilla vestibulum nec nec nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque tempor sit amet nisl in tincidunt. Pellentesque mollis feugiat mollis. Integer sed justo.</p>
+                <table class="tablahover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Tiempo</th>
+                            <th>Edad</th>
+                            <th>Gusto en común</th>
+                            <th>Color favorito</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Giovanna</td>
+                            <td class="centrar">19 años</td>
+                            <td class="centrar">23 años</td>
+                            <td class="centrar">Música</td>
+                            <td>Rosa</td>
+                        </tr>
+                        <tr>
+                            <td>Mimi Flores</td>
+                            <td class="centrar">17 años</td>
+                            <td class="centrar">23 años</td>
+                            <td class="centrar">Deporte</td>
+                            <td>Negro</td>
+                        </tr>
+                        <tr>
+                            <td>Mariana Rojas</td>
+                            <td class="centrar">10 años</td>
+                            <td class="centrar">22 años</td>
+                            <td class="centrar">Cocinar</td>
+                            <td>Negro</td>
+                        </tr>
+                        <tr>
+                            <td>Luisa Aponte</td>
+                            <td class="centrar">8 años</td>
+                            <td class="centrar">25 años</td>
+                            <td class="centrar">Baile</td>
+                            <td>Rosa</td>
+                        </tr>
+                        <tr>
+                            <td>Laura Lima</td>
+                            <td class="centrar">10 años </td>
+                            <td class="centrar">24 años</td>
+                            <td class="centrar">Música</td>
+                            <td>Rosa</td>
+                        </tr>
+                        <tr>
+                            <td>Sebastián Reyes</td>
+                            <td class="centrar">10 años</td>
+                            <td class="centrar">23 años</td>
+                            <td class="centrar">Hobbies</td>
+                            <td>Verde</td>
+                        </tr>
+                        <tr>
+                            <td>Hannia Terrazas</td>
+                            <td class="centrar">7 años</td>
+                            <td class="centrar">22 años</td>
+                            <td class="centrar">Deporte</td>
+                            <td>Amarillo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <footer>
+            <h5>Elaborado por Sofia Rojas</h5>
+        </footer>
+    </body>
+</html>

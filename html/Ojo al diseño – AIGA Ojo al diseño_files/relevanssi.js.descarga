@@ -1,0 +1,65 @@
+jQuery(function($){
+  jQuery('#search-page form').on('submit', function(event) {
+    event.preventDefault();
+    submitForm();
+  });
+
+  var submitForm = function() {
+    jQuery('#search-results').removeClass('show');
+    jQuery('#no-search-results').removeClass('show');
+
+    var search = jQuery('#search-page input').val();
+    if (search === undefined) {
+      search = '';
+    }
+
+    var selected = [];
+    jQuery('#search-page input:checked').each(function() {
+      selected.push(jQuery(this).attr('value'));
+    });
+
+    var data = {
+      action: 'relevanssi_ajax_search',
+      s: search,
+      cat: selected.join(','),
+    };
+
+    //console.log(data);
+
+    var offset = jQuery('#search-secondary').position().top;
+    var navHeight = jQuery('.js-nav-sizer').height();
+    var currentPosition = jQuery('#search-modal').scrollTop();
+    jQuery('#search-modal').animate({
+      scrollTop: currentPosition + offset - navHeight + 1
+    }, 'slow');
+
+    jQuery('#loading-search-results').show().addClass('show');
+
+    jQuery.post(relevanssiajaxsearch.url, data, function(res) {
+      jQuery('#loading-search-results').hide().removeClass('show');
+      //console.log(res);
+      if( res.success) {
+        if (res.data === "") {
+          jQuery('#no-search-results').addClass('show');
+        } else {
+          jQuery('#search-results-posts').html(res.data);
+          jQuery('#search-results').addClass('show');
+        }
+        var $backgroundPage = jQuery('.background-page');
+        var $preloadPage = jQuery('.preload-page');
+        var preloadPageHeight = $preloadPage.outerHeight(true);
+        var height = $(window).height();
+        if (preloadPageHeight > height) {
+          height = preloadPageHeight;
+        }
+        $backgroundPage.css('height', preloadPageHeight);
+      } else {
+        // console.log(res);
+        jQuery('#no-search-results').addClass('show');
+      }
+    }).fail(function(xhr, textStatus, e) {
+      // console.log(xhr.responseText);
+      jQuery('#no-search-results').addClass('show');
+    });
+  };
+});

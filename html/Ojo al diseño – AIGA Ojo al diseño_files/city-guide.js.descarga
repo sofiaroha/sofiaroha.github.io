@@ -1,0 +1,37 @@
+jQuery(function($){
+
+  jQuery(document).ready(function() {
+
+    // If click on menu button show the menu for the city guide
+    jQuery('.nav-toggle .hamburger').on('click', function(event) {
+      event.preventDefault();
+
+      if(jQuery('#menu-city-guide-modal').hasClass('in')) {
+        // Hide modal
+        jQuery('#menu-city-guide-modal').modal("hide");
+      } else {
+        // Show modal
+        jQuery('#menu-city-guide-modal').modal("show");
+      }
+
+    });
+
+    // Clicking on the page will close the menu if open
+    jQuery('.menu-city-guide-modal').on('click', function(event) {
+      if($(event.target).hasClass('menu-city-guide-modal')) {
+        jQuery('#menu-city-guide-modal').modal("hide");
+      }
+    });
+
+    // Animate the hamburger to an X button
+    jQuery('#menu-city-guide-modal').on('show.bs.modal', function() {
+        jQuery('.nav-toggle .hamburger').addClass('is-active');
+    });
+
+    jQuery('#menu-city-guide-modal').on('hide.bs.modal', function() {
+      jQuery('.nav-toggle .hamburger').removeClass('is-active');
+    });
+
+  });
+
+});

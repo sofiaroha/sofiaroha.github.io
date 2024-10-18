@@ -1,0 +1,107 @@
+jQuery(function($){
+
+  var button = $('#load-more');
+  var page = 2;
+  var loadPage = 0;
+  var post = '';
+  var loading = false;
+  var hasPosts = false;
+  if ($('#posts').length) {
+    hasPosts = true;
+  }
+  var scrollHandling = {
+      allow: true,
+      reallow: function() {
+          scrollHandling.allow = true;
+      },
+      delay: 400 //(milliseconds) adjust to the highest acceptable value
+  };
+
+  var loadPosts = function() {
+    var categories = $('#posts').attr('data-category-ids');
+    if (categories !== undefined) {
+      categories = categories.replace('[', '');
+      categories = categories.replace(']', '');
+    }
+
+    var exclude_post_ids = $('#posts').attr('data-exclude-post-ids');
+    if (exclude_post_ids !== undefined) {
+      exclude_post_ids = exclude_post_ids.replace('[', '')
+      exclude_post_ids = exclude_post_ids.replace(']', '')
+    }
+
+    var author_id = $('#posts').attr('data-author-id');
+
+
+    loading = true;
+
+    var data = {
+      action: 'be_ajax_load_more',
+      page: page,
+      query: beloadmore.query,
+      exclude_post_ids: exclude_post_ids,
+    };
+
+    if (categories !== undefined) {
+      data['cat'] = categories;
+    }
+
+    if (author_id !== undefined) {
+      data['author_id'] = author_id;
+    }
+
+    $.post(beloadmore.url, data, function(res) {
+      if( res.success) {
+        $('#posts').append( res.data );
+        $('#posts').append( button );
+
+        if (res.data === "") {
+          $('#load-more').addClass('loaded-all-posts');
+        } else {
+          loading = false;
+          history.replaceState(undefined, undefined, '#' + page)
+          page++;
+
+          if (loadPage > 0) {
+            if (page <= loadPage) {
+              loadPosts();
+            }
+
+            if (post != '') {
+              var offset = $(post).offset().top - $('.js-nav-sizer').height();
+              $(document).scrollTop(offset);
+            }
+          }
+        }
+      } else {
+        // console.log(res);
+      }
+    }).fail(function(xhr, textStatus, e) {
+      // console.log(xhr.responseText);
+    });
+  }
+
+  if (hasPosts) {
+    if (window.location.hash != '') {
+      var data = window.location.hash.replace('#', '').split(':');
+      loadPage = parseInt(data[0]);
+      post = '#' + data[1];
+      if (loadPage > 0) {
+        loading = true;
+        loadPosts();
+      }
+    }
+  }
+
+  $(window).scroll(function(){
+    if( ! loading && scrollHandling.allow && hasPosts ) {
+      scrollHandling.allow = false;
+      setTimeout(scrollHandling.reallow, scrollHandling.delay);
+      var offset = $(button).offset().top - $(window).scrollTop();
+
+      if( 2000 > offset ) {
+        loadPosts();
+      }
+    }
+  });
+});

@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Investigando</title>
+	<link rel="stylesheet" href="../css/Styles.css" type="text/css" >
+	<style type="text/css">
+		form{
+			width: 60%;
+			height: auto;
+			padding: 30px;
+			background-color: #9A74A3;
+			color: #D6F2E5;
+			margin: 0 auto;
+		}
+		label{
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+		label, input{
+			display: block;
+			margin-left: 10px;
+		}
+		input[type=text], input[type=password], input[type=number] select{
+			width: 100%;
+			color: #4A607A;
+			padding: 8px;
+			font-weight: bold;
+			border: 3px solid #418E8E;
+			border-radius: 10px;
+			background-color: mediumaquamarine;
+		}
+		input[type=submit]{
+			width: 30%;
+			background-color: #D6F2E5;
+			padding: 10px;
+			margin: 20px auto;
+			border-radius: 10px;
+			color: #4A607A;
+			font-weight: bolder;
+		}
+		input[type=text]:focus, input[type=password]:focus{
+			background-color: mediumblue;
+			border: 3px solid #418E8E;
+		}
+        input [type=range]{
+            margin: 0 auto;
+            padding: 10px;
+        }
+		select{
+			width: 100%;
+			margin-left: 10px;
+			background-color: #D6F2E5;
+			color: mediumpurple;
+			padding: 10px;
+			border-radius: 10px;
+		}
+	</style>
+</head>
+
+<body>
+<header>
+	<h1>Investigando</h1>
+</header>
+<nav>
+	<ul>
+		<li> <a href="../Index.html">Inicio</a></li>
+            <li><a href="../html/Gustos.html">Listas</a> </li>
+            <li><a href="../html/Deporte%20favorito.html">Imagenes</a> </li>
+            <li><a href="../html/Enlaces.html">Enlaces</a> </li>
+            <li><a href="../html/Cancionesfavoritas.html">Audio</a> </li>
+            <li><a href="../html/Videofav.html">Video</a></li>
+            <li><a href="../html/Investigando.html">Formularios</a></li>
+            <li><a href="../html/Amistades.html">Tablas</a></li>
+           
+	</ul>
+</nav>
+<main>
+  <section>
+    <h2>Inicio</h2>
+  <p>Para inicar ingresa tu nombre y contraseña para tener un usuario de sesión.</p>
+	<form action="" method="get">
+		<label id="">Nombre:</label>
+		<input type="text" id="Nombre" name="Nombre"></input>
+		<label id="">Contraseña:</label>
+		<input type="password" id="contrasena" namr="contrasena" ></input>
+		<input type="submit" value="enviar"></input>
+	</form>
+</section>
+  <section>
+    <h2>Datos</h2>
+    <p>Ingresa tu edad, nombre y facultad en la que te encuentras estudiando.</p>
+    <form id="form1" name="form1" method="post">
+<label for="Nombre">Nombre</label>
+      <input type="text" name="Nombre" id="Nombre">
+      <label for="edad">Edad</label>
+      <input type="number" name="edad" id="edad" min="18" max="100">
+      <label for="select">Facultad:</label>
+      <select name="Estado" id="Estado">
+		  <option value="Aguascalientes">Arquitectura</option>
+		  <option value="Puebla">Ingeniería</option>
+		  <option value="Durango">Derecho</option>
+		  <option value="Nayarit">Administración</option>
+		  <option value="CDMX">Cultura física</option>
+      </select>
+	
+      <input type="submit" name="submit" id="submit" value="Enviar">
+    </form>
+		
+  </section>
+  <section>
+    <h2>Personal</h2>
+    <p>Selecciona tu género</p>
+    <form id="form2" name="form2" method="post"> 
+ <label for="textfield">Nombre:&nbsp;</label> 
+ <input type="text" name="textfield" id="textfield"> 
+<label for="Genero"><br>
+  Genero</label> 
+ <table width="200" style="width: 30%"> 
+ <tr> 
+ <td ><label><input type="radio" name="Genero" value="Fem" 
+id="Genero_0"></label></td> 
+<td>Femenino</td> 
+ </tr> 
+ <tr> 
+ <td><label><input type="radio" name="Genero" value="Mas" 
+id="Genero_1"></label> 
+ <td>Masculino</td> 
+ </tr> 
+ <tr> 
+ <td><label><input type="radio" name="Genero" value="Otros" 
+id="Genero_2"></label> 
+ <td>Otros</td> <br>
+ </tr> 
+ </table>
+    <input type="submit" name="submit" id="submit" value="Enviar">
+    </form>
+  </section>
+  <section>
+    <h2>Sobre tu carrera</h2>
+    <p>Llena el formulario para saber sobre tu carrera que estás estuiando.</p>
+      <form action="" method="post"> 
+ <label for="nombre">1. ¿Cuál es tu nombre completo?</label> 
+ <input type="text" id="nombre" name="nombre" required><br><br> 
+ <label for="edad">2. ¿Cuál es tu edad?</label> 
+ <input type="number" id="edad" name="edad" min="0" required><br><br> 
+ 
+ <label for="fecha-nacimiento"> 3. ¿Cúal es tu fecha de nacimiento?</
+label><input type="date" id="fecha-nacimiento" name="fechanacimiento"><br><br> 
+ <label for="inicio-carrera">4. ¿Cuándo comenzaste la carrera?
+</label> 
+ <input type="date" id="inicio-carrera" name="iniciocorrera"><br><br> 
+ <label for="habilidades">5. ¿Cuáles son tus habilidades?</label> 
+ <input type="text" id="juegos-favoritos" name="juegosfavoritos"><br><br> 
+ <label for="color-favorito"> 6. Selecciona tu color <b>favorito</b>:</
+label> 
+ <input type="color" id="color-favorito" name="color-favorito"><br><br> 
+ 
+ <label for="telefono">7. Si te damos el lugar, ¿cuál sería un número de contacto?</label> 
+ <input type="tel" id="telefono" name="telefono" placeholder="Tu 
+número de teléfono"><br><br> 
+ <label for="mejor-consejo">8. ¿Cuál es el mejor consejo que podrías dar a los qué van iniciando en este medio?</label> 
+ <input type="text" id="mejor-consejo" name="mejor-consejo" 
+placeholder="Escribe tu consejo aquí"><br><br> 
+ 
+ <label for="homepage">9. ¿Quién es tu inspiración?</label><input 
+type="url" id="homepage" name="homepage"> 
+ 
+ <label for="mejora">10. ¿Que tanto has mejorado desde tu inicio?
+</label> <input type="range" id="horasDormir" name="horasDormir" min="1" 
+max="12" value="7" required> 
+ <input type="submit" name="submit" id="submit" value="Enviar"> 
+ </form>
+</section>
+Colocar aquí el contenido de la nueva etiqueta main</main>
+<footer>
+  <h5>Elaborado por Sofía Rojas</h5>
+</footer>
+</body>
+</html>
